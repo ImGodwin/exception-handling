@@ -1,8 +1,16 @@
 package exception;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.System.in;
+
 public class Practice {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //exceptions are of 3 types
         //throwable extended by Exceptions and Errors
         //Exception you can handle
@@ -43,7 +51,58 @@ public class Practice {
         System.out.println(k);*/
 
 
-        //1. Write a Java program that throws an exception and catch it using a try-catch block.
+        //1. Write a Java program to create a method that takes an integer as a parameter and throws an exception
+        // if the number is odd.
+
+        Scanner input = new Scanner(in);
+       /*     try{
+                System.out.println("enter a number");
+                int number = Integer.parseInt(input.nextLine());
+                oddNumChecker(number);
+            }catch(OddException e){
+                System.out.println(e.getMessage());
+
+            }catch (NumberFormatException exception)
+            {
+                System.err.println(exception.getMessage());
+            }*/
+
+        //3.  Write a Java program to create a method that reads a file and throws
+        // an exception if the file is not found
+/*
+        File file = new File("./prova2.txt");
+
+        try{
+            if (file.exists())
+            {
+                System.out.print("This file exists");
+            }else {
+                throw new Exception("the file was never created");
+            }
+            }catch(Exception e)
+            {
+                System.err.print(e.getMessage());
+            }*/
+
+       //3. Write a Java program that reads a list of numbers
+        // from a file and throws an exception if any of the numbers are positive.
+
+        char[] in = new char[10];
+        File file = new File("./exception/prova.txt");
+
+        FileReader file2 = new FileReader((file));
+        file2.read(in);
+       System.out.println(Arrays.toString(in));
 
     }
+
+    /*public static void oddNumChecker(int num)
+    {
+        if(num % 2 != 0)
+        {
+            throw new OddException("this is an odd number");
+        }else {
+            System.out.println("This number is even");
+        }
+    }*/
 }
