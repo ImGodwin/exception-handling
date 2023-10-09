@@ -29,7 +29,7 @@ public class Main {
                 }
 
 
-            }catch (Exception ex){
+            }catch (ArithmeticException ex){
                 System.out.println("confirming");
             }finally{
                 input.close();
@@ -60,9 +60,13 @@ public class Main {
             System.out.println("You consumed " + petrolPerKm + " litres during your " + arr[1] + " km trip");
 
 
-        } catch (Exception ex) {
-            System.out.println("Confirm input");
-        } finally {
+        } catch (ArithmeticException ex) {
+            System.out.println("Arithmetic problem");
+            System.out.println(usedcar.getKm());
+        } catch (Exception ex)
+        {
+            System.err.println("Problem, check input");
+        }finally {
             input.close();
         }
     }

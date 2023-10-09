@@ -44,12 +44,12 @@ public class Car {
         return km;
     }
 
-    public int setKm(int km) {
+    public void setKm(int km) {
 
-        if (km == 0) {
+        if (km == 0)
             throw new NumberEqualsZero(km);
-        }
+
         this.km = km;
-        return km;
+
     }
 }
