@@ -25,7 +25,7 @@ public class Practice {
 
         //System.out.println(k);
 
-        try{
+        /*try{
             k = 1/j;
             for (int l = 0; l < a.length; l++)
             {
@@ -40,9 +40,10 @@ public class Practice {
         {
             System.out.println("cannot divide by zero");
         }
-        System.out.println(k);
+        System.out.println(k);*/
 
 
+        //1. Write a Java program that throws an exception and catch it using a try-catch block.
 
     }
 }

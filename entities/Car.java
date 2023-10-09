@@ -8,11 +8,10 @@ public class Car {
     private int petrolLtrs;
     private int km;
 
-    public Car(String carName, int petrolLtrs, int km) {
+    public Car(String carName) {
 
         this.carName = carName;
-        this.petrolLtrs = petrolLtrs;
-        this.setKm(km);
+
     }
 
     @Override
@@ -45,11 +44,10 @@ public class Car {
     }
 
     public void setKm(int km) {
-
-        if (km == 0)
+        if (km <= 0)
             throw new NumberEqualsZero(km);
+        else this.km = km;
 
-        this.km = km;
 
     }
 }
