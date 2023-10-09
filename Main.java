@@ -1,9 +1,11 @@
+import entities.Car;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       // #2.
+        // #2.
 
         /*int[] arr = {3, 5, 7, 9, 4, 6, 8, 1, 2, 0};
 
@@ -37,27 +39,31 @@ public class Main {
 
         //int km, litri;
 
+        Car usedcar = new Car("Mercedes", 20, 45);
+        int[] arr = new int[]{(int) usedcar.getPetrolLtrs(), (int) usedcar.getKm()};
         Scanner input = new Scanner(System.in);
 
-        try{
+        try {
+
             System.out.println("enter km: ");
-            int carKilometre = Integer.parseInt(input.nextLine());
-            km = carKilometre;
 
             System.out.println("How many litres of petrol?: ");
             int petrolConsumed = Integer.parseInt(input.nextLine());
-            litri = petrolConsumed;
+            arr[0] = petrolConsumed;
+
+            System.out.println("How many km traveled: ");
+            int carKilometre = Integer.parseInt(input.nextLine());
+            arr[1] = carKilometre;
+
+            double petrolPerKm = Math.floor((arr[0] * 100) / arr[1]);
+
+            System.out.println("You consumed " + petrolPerKm + " litres during your " + arr[1] + " km trip");
 
 
-        }catch (){
-
+        } catch (Exception ex) {
+            System.out.println("Confirm input");
+        } finally {
+            input.close();
         }
-
-
-        }
-
-
-
-
-
     }
+}
